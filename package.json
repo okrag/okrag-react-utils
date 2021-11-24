@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "nodemon src/test.ts",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "pack": "mv \"$(npm pack | tail -n 1)\" ./packed/okrag-react-utils.tgz"
   },
   "author": "Okrag",
   "license": "MIT",
