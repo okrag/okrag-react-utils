@@ -5,7 +5,8 @@
   "main": "build/index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon src/test.ts",
+    "dev:test": "nodemon src/test.ts",
+    "dev:pack": "nodemon -e ts,json,tsx --ignore build/ --exec \"npm run pack\"",
     "prepack": "npm run build",
     "pack": "mv \"$(npm pack | tail -n 1)\" ~/libs/okrag-react-utils.tgz"
   },
