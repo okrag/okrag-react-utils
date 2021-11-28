@@ -38,13 +38,15 @@ export const useTranslationTree = <MessagesType extends MessagesDictType>() => {
   const localizationClass = useLocalizationClass<MessagesType>();
   const [tree, setTree] = useState(localizationClass?.translations);
 
-  useEffect(
-    () =>
-      localizationClass?.addEventListener("translationTreeChange", () => {
-        setTree(localizationClass?.translations);
-      }),
-    [localizationClass],
-  );
+  useEffect(() => {
+    if (!localizationClass) return;
+
+    setTree(localizationClass.translations);
+
+    return localizationClass.addEventListener("translationTreeChange", () => {
+      setTree(localizationClass.translations);
+    });
+  }, [localizationClass]);
 
   return tree;
 };
