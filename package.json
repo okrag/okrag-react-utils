@@ -1,7 +1,6 @@
 {
   "name": "okrag-react-utils",
   "version": "1.0.0",
-  "private": true,
   "main": "build/index.js",
   "scripts": {
     "build": "tsc",
@@ -10,7 +9,12 @@
     "prepack": "npm run build",
     "pack": "mv \"$(npm pack | tail -n 1)\" ~/libs/okrag-react-utils.tgz"
   },
-  "author": "Okrag",
+  "keywords": [
+    "okrag",
+    "utils",
+    "react"
+  ],
+  "author": "okrag",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^14.14.37",
@@ -20,7 +24,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "okrag-utils": "file:~/libs/okrag-utils.tgz",
+    "okrag-utils": "^1.0.0",
     "react": "^17.0.2",
     "reflect-metadata": "^0.1.13"
   }
